@@ -156,32 +156,9 @@
 <!-- GAMES -->
 <section id="games" class="section">
     
-    <h2>My Mini Games</h2>
+    
 
-    <p class="game-intro">
-        Welcome to my mini games! Choose a number,
-        test your skills, and have fun!
-    </p>
 
-<!-- NUMBER GUESSING -->
-<div class="game-card">
-
-    <h3>1. Number Guessing Game</h3>
-
-    <p>Guess the secret number between 1 and 20.</p>
-
-    <input type="number" id="guessInput"
-        min="1" max="10"
-        placeholder="Enter your guess">
-
-    <button id="guessButton">Check Answer</button>
-
-    <p id="guessMessage">Good luck!</p>
-
-    <button id="resetGuess">Play Again</button>
-
-</div>   
-    </div>    
 <!-- JAVA PROGRAMMING PROJECT -->
 
 <section id="java">
@@ -287,48 +264,7 @@ public class GuessTheNumber {
 </section>
 
 <script>
-let secretNumber = Math.floor(Math.random() * 20) + 1;
 
-const guessInput = document.getElementById("guessInput");
-const guessButton = document.getElementById("guessButton");
-const guessMessage = document.getElementById("guessMessage");
-const resetGuess = document.getElementById("resetGuess");
-
-guessButton.addEventListener("click", function() {
-
-    let guess = Number(guessInput.value);
-
-    if (guessInput.value === "") {
-        guessMessage.textContent = "Please enter a number!";
-    }
-
-    else if (guess < 1 || guess > 20) {
-        guessMessage.textContent = "Enter a number from 1 to 20!";
-    }
-
-    else if (guess === secretNumber) {
-        guessMessage.textContent = "Congratulations! You got it right!";
-    }
-
-    else if (guess < secretNumber) {
-        guessMessage.textContent = "Too low! Try again.";
-    }
-
-    else {
-        guessMessage.textContent = "Too high! Try again.";
-    }
-
-});
-
-resetGuess.addEventListener("click", function() {
-
-    secretNumber = Math.floor(Math.random() * 10) + 1;
-
-    guessInput.value = "";
-    guessMessage.textContent = "Good luck!";
-
-});
-</script>
 </body>
 </html>
 
